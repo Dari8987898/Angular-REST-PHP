@@ -1,0 +1,32 @@
+<div id="back">
+    <div id="top">
+      <label>Manage <b>Students</b></label>
+      <button id="add" (click)="add(message('name'), message('surname'), message('sidicode'), message('taxcode'))">Add New Student</button>
+    </div>
+    <div id="bottom">
+      <table id="list">
+        <tr>
+          <td>ID</td>
+          <td>First Name</td>
+          <td>Last Name</td>
+          <td>Sidi Code</td>
+          <td>Tax Code</td>
+          <td>Action</td>
+        </tr>
+        <tr *ngFor="let s of array">
+          <td>{{s.id}}</td>
+          <td>{{s.name}}</td>
+          <td>{{s.surname}}</td>
+          <td>{{s.sidi_code}}</td>
+          <td>{{s.tax_code}}</td>
+          <td>
+            <button id="remove" (click)="remove(s.id)">Remove</button>
+            <button id="modify" (click)="modify(s.id, message('name'), message('surname'), message('sidicode'), message('taxcode'))">Modify</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div>
+      <p id="result"></p>
+    </div>
+</div>
